@@ -13,8 +13,8 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
  * @param config Parametro de configuracion del web Scoket.
  */
     @Override
-    public void configureMessageBroker(MessageBrokerRegistry config) {
-        config.enableSimpleBroker("/topic");
+    public void configureMessageBroker(MessageBrokerRegistry config) {        
+        config.enableStompBrokerRelay("/topic").setRelayHost("34.74.211.162").setRelayPort(61613);
         config.setApplicationDestinationPrefixes("/app");
     }
 /**
@@ -23,7 +23,8 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
  */
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
-        registry.addEndpoint("/gs-guide-websocket").withSockJS();
+        registry.addEndpoint("/stompendpoint").setAllowedOrigins("*").withSockJS();
+        
     }
 
 }

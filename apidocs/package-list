@@ -1,0 +1,6 @@
+edu.eci.arsw.cartmode
+edu.eci.arsw.cartmode.controllers
+edu.eci.arsw.cartmode.model
+edu.eci.arsw.cartmode.model.impl
+edu.eci.arsw.cartmode.persistence
+edu.eci.arsw.cartmode.services
